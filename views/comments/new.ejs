@@ -1,0 +1,33 @@
+<% include ../partials/header %>
+<div class="container">
+    <h1 class="text-center">Add New Comment to <%= movie.name %></h1>
+    <div class="row">
+        <div style="width: 35%; margin: 25px auto">
+            <form action="/movies/<%= movie._id%>/comments" method="POST">
+                <div class="form-group">
+                    <input class="form-control" type="text" name="comment[text]" placeholder="text">
+                </div>
+                
+                <div class="container">
+                    <div class="star_rating">
+                    <h4> Rating</h4>
+                    <fieldset class="rating star">
+                    	<input type="radio" id="field6_star5" name="comment[score]" value=5 required /><label class = "full" for="field6_star5"></label>
+                    	<input type="radio" id="field6_star4" name="comment[score]" value=4 required /><label class = "full" for="field6_star4"></label>
+                    	<input type="radio" id="field6_star3" name="comment[score]" value=3 required /><label class = "full" for="field6_star3"></label>
+                    	<input type="radio" id="field6_star2" name="comment[score]" value=2 required /><label class = "full" for="field6_star2"></label>
+                    	<input type="radio" id="field6_star1" name="comment[score]" value=1 required /><label class = "full" for="field6_star1"></label>
+                    </fieldset>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-lg btn-block btn-info">Submit!</button>
+                </div>
+            </form>
+            <a href="/movies">Go Back</a>
+        </div>
+    </div>
+</div>
+
+
+<% include ../partials/footer %>
